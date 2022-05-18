@@ -92,3 +92,13 @@ function stopTimer() {
     timer.innerText = "00:00:00";
     timer.style.display = "none";
 }
+
+let filterLayer = document.querySelector(".filter-layer");
+let allFilters = document.querySelectorAll(".filter");
+allFilters.forEach((filterElem) => {
+    filterElem.addEventListener("click", (e) => {
+        // Get style
+        transparentColor = getComputedStyle(filterElem).getPropertyValue("background-color");
+        filterLayer.style.backgroundColor = transparentColor;
+    })
+})
